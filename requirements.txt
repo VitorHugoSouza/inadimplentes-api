@@ -23,7 +23,7 @@ Flask-Cors==3.0.10
 fonttools==4.33.3
 idna==3.4
 ipykernel==6.7.0
-ipython==8.4.0
+ipython==7.34.0
 ipython-genutils==0.2.0
 ipywidgets==7.7.1
 itsdangerous==2.1.2
