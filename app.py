@@ -2,7 +2,7 @@ import numpy as np
 from flask import Flask, request, render_template
 from joblib import load
 
-app = Flask(__name__,template_folder='template') #Initialize the flask App
+app = Flask(__name__) #Initialize the flask App
 model = load('melhor_modelo.joblib')
 
 # @app.route('/')
