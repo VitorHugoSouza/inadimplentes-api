@@ -5,9 +5,9 @@ from joblib import load
 app = Flask(__name__,template_folder='template') #Initialize the flask App
 model = load('melhor_modelo.joblib')
 
-@app.route('/')
-def home():
-    return render_template('index.html')
+# @app.route('/')
+# def home():
+#    return render_template('index.html')
 
 @app.route('/predict',methods=['POST'])
 def predict():
@@ -20,7 +20,7 @@ def predict():
     prediction_prob = model.predict_proba(final_features)
     output = round(prediction[0], 2)
 
-    return render_template('index.html', prediction_text='A pessoa (0 - Não inadimplente ou 1 - Inadimplente) : {} {}'.format(output, prediction_prob))
+    return '(0 - Não inadimplente ou 1 - Inadimplente) : {} {}'.format(output, prediction_prob)
 
 if __name__ == "__main__":
     app.run(debug=True)
