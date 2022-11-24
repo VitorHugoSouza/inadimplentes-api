@@ -5,9 +5,9 @@ from joblib import load
 app = Flask(__name__) #Initialize the flask App
 model = load('melhor_modelo.joblib')
 
-# @app.route('/')
-# def home():
-#    return render_template('index.html')
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 @app.route('/predict',methods=['POST'])
 def predict():
