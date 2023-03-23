@@ -3,6 +3,9 @@ from flask import Flask, request, render_template
 from joblib import load
 
 app = Flask(__name__) 
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
 model = load('melhor_modelo.joblib')
 
 @app.route('/')
