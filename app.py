@@ -2,10 +2,11 @@ import numpy as np
 from flask import Flask, request, render_template
 from joblib import load
 
-app = Flask(__name__) 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+WEBAPP_ROOT = "webapp"
+
+template_dir = os.path.join(WEBAPP_ROOT, "templates")
+
+app = Flask(__name__, template_folder=template_dir) 
 model = load('melhor_modelo.joblib')
 
 @app.route('/')
