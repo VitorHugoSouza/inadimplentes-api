@@ -14,7 +14,7 @@ preprocessing==0.1.13
 scikit-learn==1.0.2
 scipy==1.9.3
 six==1.16.0
-sklearn==0.0.post1
+scikit-learn
 sphinx-rtd-theme==0.2.4
 threadpoolctl==3.1.0
 virtualenv==20.16.7
