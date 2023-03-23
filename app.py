@@ -4,7 +4,7 @@ from joblib import load
 
 WEBAPP_ROOT = "webapp"
 
-template_dir = os.path.join(WEBAPP_ROOT, "templates")
+template_dir = os.path.join(WEBAPP_ROOT, "template")
 
 app = Flask(__name__, template_folder=template_dir) 
 model = load('melhor_modelo.joblib')
