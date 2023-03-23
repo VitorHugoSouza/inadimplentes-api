@@ -11,7 +11,7 @@ model = load('melhor_modelo.joblib')
 
 @app.route("/")
 def index():
-    return render_template("template/index.html")
+    return render_template("index.html")
 
 @app.route("/predict",methods=['POST'])
 def predict():
