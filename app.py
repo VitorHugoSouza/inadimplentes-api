@@ -1,19 +1,16 @@
 import numpy as np
 from flask import Flask, request, render_template
-from joblib import load
+import pickle
 
-WEBAPP_ROOT = "webapp"
 
-template_dir = os.path.join(WEBAPP_ROOT, "template")
+app = Flask(__name__, template_folder='template') 
+model = pickle.load(open('melhor_modelo.joblib', 'rb'))
 
-app = Flask(__name__, template_folder=template_dir) 
-model = load('melhor_modelo.joblib')
-
-@app.route("/")
+@app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template('index.html')
 
-@app.route("/predict",methods=['POST'])
+@app.route('/predict',methods=['POST'])
 def predict():
     '''
     For rendering results on HTML GUI
@@ -27,5 +24,4 @@ def predict():
     return '(0 - Não inadimplente ou 1 - Inadimplente) : {} {}'.format(output, prediction_prob)
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(debug=True)
