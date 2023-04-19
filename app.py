@@ -1,10 +1,10 @@
 import numpy as np
 from flask import Flask, request, render_template
-import pickle
+from joblib import load
 
 
 app = Flask(__name__, template_folder='template') 
-model = pickle.load(open('melhor_modelo.joblib', 'rb'))
+model = load('melhor_modelo.joblib')
 
 @app.route('/')
 def index():
